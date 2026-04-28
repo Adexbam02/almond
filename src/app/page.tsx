@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Partners from "@/components/Partners";
+import TabContents from "@/components/TabContents";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div className="">
       <Hero />
       <Partners />
+      <TabContents />
     </div>
   );
 }

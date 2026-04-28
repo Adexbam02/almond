@@ -57,8 +57,6 @@ function Partners() {
             <Ticker5 />
           </motion.div>
         </div>
-
-        <div className="min-h-screen"></div>
       </motion.div>
     </section>
   );
