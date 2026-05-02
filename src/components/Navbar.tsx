@@ -23,7 +23,7 @@ function Navbar() {
 
           <Link
             href="/hirings"
-            className="not-italic font-medium w-fit h-fit flex flex-row justify-center items-center px-4 py-2 bg-[linear-gradient(92deg,rgba(37,99,255,0.05)_0%,rgba(37,99,255,0)_100%)] overflow-visible content-center flex-nowrap gap-[10px] rounded-[48px] border border-[rgba(37,99,255,0.2)] h6"
+            className="shrink-0 not-italic font-medium w-fit h-fit flex flex-row justify-center items-center px-4 py-2 bg-[linear-gradient(92deg,rgba(37,99,255,0.05)_0%,rgba(37,99,255,0)_100%)] overflow-visible content-center flex-nowrap gap-[10px] rounded-[48px] border border-[rgba(37,99,255,0.2)] h6"
           >
             We're Hiring
           </Link>
