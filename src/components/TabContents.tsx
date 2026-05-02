@@ -1,16 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { PremiumMembership } from "../../public/images/images";
 import TabContentsBtn from "./TabContentsBtn";
 import { TabContentsData } from "../../public/data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function TabContents() {
   const [activeTab, setActiveTab] = useState(1);
 
   const activeTabData = TabContentsData.find((tab) => tab.id === activeTab);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTab((prev) => {
+        if (prev === TabContentsData.length) {
+          // loop back to first
+          return 1;
+        }
+        return prev + 1;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section className="p-[24px] md:p-[64px] gap-[24px] flex flex-col items-center justify-center bg-white w-full max-w-[1400px]">
       <motion.header
@@ -48,13 +62,23 @@ function TabContents() {
         }}
         className="w-full h-fit flex flex-col items-center justify-center md:flex-row pt-[36px] gap-[10px] lg:px-[36px] lg:pt-[36px] md:gap-[36px]"
       >
-        <div className="w-full md:w-[618px] md:h-[444px] h-[316px] flex items-center justify-center gap-[10px] bg-[#F0F4FF] rounded-[20px]">
-          <Image
-            src={activeTabData?.image || PremiumMembership}
-            height={316}
-            width={440}
-            alt={activeTabData?.title || "Tab Image"}
-          />
+        <div className="w-full md:w-[618px] md:h-[444px] h-[316px] flex items-center justify-center gap-[10px] bg-[#F0F4FF] rounded-[20px] overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -40 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Image
+                src={activeTabData?.image || PremiumMembership}
+                height={316}
+                width={440}
+                alt={activeTabData?.title || "Tab Image"}
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         <div className="w-full md:max-w-[302px] flex flex-col items-center justify-center p-[16px] gap-[10px]">
