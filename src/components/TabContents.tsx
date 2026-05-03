@@ -26,7 +26,7 @@ function TabContents() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <section className="p-[24px] md:p-[64px] gap-[24px] flex flex-col items-center justify-center bg-white w-full max-w-[1400px]">
+    <section className="p-[24px] md:p-[48px] lg:p-[64px] gap-[24px] flex flex-col items-center justify-center bg-white w-full max-w-[1400px]">
       <motion.header
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -99,8 +99,6 @@ function TabContents() {
           })}
         </div>
       </motion.div>
-
-      <div className="min-h-screen"></div>
     </section>
   );
 }
