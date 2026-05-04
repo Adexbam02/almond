@@ -5,7 +5,7 @@ import TabContents from "@/components/TabContents";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="overflow-hidden">
       <Hero />
       <Partners />
       <TabContents />

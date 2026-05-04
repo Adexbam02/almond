@@ -1,8 +1,12 @@
 import {
   CalendarDotsIcon,
+  GaugeIcon,
+  HandGrabbingIcon,
   Layout,
+  PuzzlePieceIcon,
   RocketIcon,
   SparkleIcon,
+  TextAaIcon,
 } from "@phosphor-icons/react";
 import {
   CustomDashboard,
@@ -35,5 +39,28 @@ export const TabContentsData = [
     title: "Custom Dashboard",
     icon: Layout,
     image: CustomDashboard,
+  },
+];
+
+export const BottomSection = [
+  {
+    id: 1,
+    title: "Great Typography",
+    icon: TextAaIcon,
+  },
+  {
+    id: 2,
+    title: "Light Speed Page Load",
+    icon: GaugeIcon,
+  },
+  {
+    id: 3,
+    title: "Drag and Drop Features",
+    icon: HandGrabbingIcon,
+  },
+  {
+    id: 4,
+    title: "Ready to Use Components",
+    icon: PuzzlePieceIcon,
   },
 ];

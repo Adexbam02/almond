@@ -7,6 +7,8 @@ import {
   ConsistentDesignSystem,
   TaskAutomation,
 } from "../../public/images/images";
+import { TextAaIcon } from "@phosphor-icons/react";
+import ContentSectionBtmCard from "./ContentSectionBtmCard";
 
 function ContentSection() {
   return (
@@ -73,7 +75,7 @@ function ContentSection() {
               className="w-full h-[300px] object-cover object-center"
             />
           </motion.div>
-          <div className="flex flex-col items-center justify-center gap-[24px]">
+          <motion.div className="flex flex-col items-center justify-center gap-[24px]">
             <motion.div
               whileHover={{
                 scale: 1,
@@ -132,10 +134,10 @@ function ContentSection() {
                 className="w-full h-[300px] object-cover object-center"
               />
             </motion.div>
-          </div>
+          </motion.div>
         </motion.div>
 
-        <motion.div></motion.div>
+        <ContentSectionBtmCard />
       </div>
 
       <div className="min-h-screen"></div>
